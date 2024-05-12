@@ -1,0 +1,75 @@
+{% extends 'base.html'%}
+
+{% block title%}
+Список групп
+{% endblock %}
+
+
+{% block head%}
+<link rel="stylesheet" href="static/css/index.css" />
+<link rel="stylesheet" href="static/css/frame-116.css" />
+
+{% endblock %}
+
+{% block body%}
+      <div class="vector-group">
+        <img class="ellipse-icon" alt="" src="static/images/ellipse-1061.svg" />
+
+        <b class="b4">Список всех групп</b>
+        <div class="group-child26"></div>
+      </div>
+
+      {%for group in groups%}
+              <div class="frame-group" ><div href="/course{{ group.id }}" id="{{ group.id }}">
+                <div class="frame-div">
+                  <div class="frame-wrapper1">
+                    <div class="ellipse-parent">
+
+                      <div class="group" >{{group.name}}</div>
+                    </div>
+                  </div>
+                  <div class="ellipse-wrapper">
+                    <div class="ellipse-div"></div>
+                  </div>
+                  <div class="rectangle-group">
+                    <div class="rectangle-div"></div>
+                    <div class="frame-child1"></div>
+                    <img
+                      class="group-icon"
+                      loading="lazy"
+                      alt=""
+                      src="{{ url_for('static', filename='images/' + group.groups_img) }}"
+                    />
+                  </div>
+                    {%endfor%}
+                </div>
+              </div>
+
+
+<footer class="footer">
+  <div class="rectangle-parent11">
+    <div class="frame-child25"></div>
+    <div class="rectangle-parent12">
+      <div class="frame-child26"></div>
+      <div class="rectangle-parent13">
+        <div class="frame-child27"></div>
+        <div class="div3">Главная</div>
+        <div class="div4">Сайт РФ ПГУ</div>
+        <div class="div5">Контакты</div>
+        <div class="div6">Группы</div>
+        <div class="strada-iuri-gagarin">
+          Strada Iuri Gagarin 12, Rîbniţa
+        </div>
+        <h1 class="h1">ИиПИ</h1>
+        <div class="div7">(00373)-(555)-2-09-03</div>
+        <img
+          class="subtract-icon"
+          loading="lazy"
+          alt=""
+          src="static/images/subtract.svg"
+        />
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}

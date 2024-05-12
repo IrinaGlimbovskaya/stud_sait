@@ -1,0 +1,134 @@
+{% extends 'base.html'%}
+{% block head%}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+
+{% endblock %}
+{% block title%}Главная страница{% endblock %}
+
+{% block body%}
+  <section class="section">
+      <div class="vector-parent">
+        <img class="group-item" alt="" src="static/images/ellipse-106.svg" />
+
+        <b class="b1">
+          <p class="p">Этот сайт содержит портфолио студентов групп кафедры Информатики и Программной Инженерии</p>
+
+        </b>
+        <div class="group-inner"></div>
+      </div>
+  </section>
+        <div class="frame-div">
+          <div class="frame-group">
+                <div class="frame-div">
+                  <div class="frame-wrapper1">
+                    <div class="ellipse-parent">
+                      <div class="frame-inner"></div>
+                      <div class="group">ГРУППА РФ20ДР62ПИ</div>
+                    </div>
+                  </div>
+                  <div class="ellipse-wrapper">
+                    <div class="ellipse-div"></div>
+                  </div>
+                  <div class="rectangle-group">
+                    <div class="rectangle-div"></div>
+                    <div class="frame-child1"></div>
+                    <img
+                      class="group-icon"
+                      loading="lazy"
+                      alt=""
+                      src="static/images/group-17@2x.png"
+                    />
+                  </div>
+              <div class="frame-group">
+                <div class="frame-div">
+                  <div class="frame-wrapper1">
+                    <div class="ellipse-parent">
+                      <div class="frame-inner"></div>
+                      <div class="group">ГРУППА РФ21ДР62ПИ</div>
+                    </div>
+                  </div>
+                  <div class="ellipse-wrapper">
+                    <div class="ellipse-div"></div>
+                  </div>
+                  <div class="rectangle-group">
+                    <div class="rectangle-div"></div>
+                    <div class="frame-child1"></div>
+                    <img
+                      class="group-icon"
+                      loading="lazy"
+                      alt=""
+                      src="static/images/21РФ62ДРПИ.jpg"
+                    />
+                  </div>
+                </div>
+                <div class="frame-wrapper2">
+                  <div class="rectangle-container" id="groupContainer">
+                    <div class="frame-child2"></div>
+                    <div class="div">
+                      <p class="p2"></p><a href ="/ListOfGroups">Посмотреть список всех групп</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="frame-wrapper3">
+                <div class="group-div">
+                  <img
+                    class="rectangle-icon"
+                    alt=""
+                    src="static/images/rectangle-77@2x.png"
+                  />
+                  <button class="rectangle-parent10">
+                    <div class="frame-child24"></div>
+                    <div class="div2">Перейди на сайт РФ ПГУ</div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>
+
+          <footer class="footer">
+  <div class="rectangle-parent11">
+
+
+        <div class="div3">Главная</div>
+        <div class="div4">Сайт РФ ПГУ</div>
+        <div class="div5">Контакты</div>
+        <div class="div6">Группы</div>
+        <div class="strada-iuri-gagarin">
+          Strada Iuri Gagarin 12, Rîbniţa
+        </div>
+        <h1 class="h1">ИиПИ</h1>
+        <div class="div7">(00373)-(555)-2-09-03</div>
+        <img
+          class="subtract-icon"
+          loading="lazy"
+          alt=""
+          src="static/images/subtract.svg"
+        />
+  </div>
+</footer>
+</div>
+
+    <script>
+      var linkContainer = document.getElementById("linkContainer");
+      if (linkContainer) {
+        linkContainer.addEventListener("click", function (e) {
+          // Please sync "Frame 116" to the project
+        });
+      }
+
+      var youCanDoWithSkilline = document.getElementById("youCanDoWithSkilline");
+      if (youCanDoWithSkilline) {
+        youCanDoWithSkilline.addEventListener("click", function (e) {
+          // Please sync "Frame 117" to the project
+        });
+      }
+
+      var groupContainer5 = document.getElementById("groupContainer5");
+      if (groupContainer5) {
+        groupContainer5.addEventListener("click", function (e) {
+          window.location.href = "https://rfpgu.ru/news.php";
+        });
+    </script>
+{% endblock %}
