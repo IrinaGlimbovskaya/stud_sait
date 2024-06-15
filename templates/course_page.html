@@ -1,189 +1,66 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 
-{% block title%}
-Список групп
+{% block title %}
+Страница группы {{course.name}}
 {% endblock %}
 
-
-{% block head%}
+{% block head %}
+    {{ super() }}
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <link rel="stylesheet" href="static/css/global.css" />
-    <link rel="stylesheet" href="static/css/frame-117.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/course_page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/students.css') }}">
 {% endblock %}
-{% block body%}
-    <div class="rectangle-parent11">
-      <div class="frame-child2"></div>
-      <div class="testimonials3">
-        <b class="b10">{{course.curator}}</b>
+
+{% block body %}
+<div class = 'center'>
+  <section>
+    <div class="frame-child2"></div>
+    <div class="testimonials3">
+    <div class="curator-name"><b class="b10">{{ course.curator }}</b></div>
         <div class="div32">Куратор группы</div>
         <img class="mask-group-icon4" alt="" src="{{ url_for('static', filename='images/' + course.curator_img) }}" />
-
         <div class="testimonials-child"></div>
         <div class="testimonials-item"></div>
         <div class="testimonials-inner"></div>
         <img class="line-icon" alt="" src="static/images/line-4.svg" />
-
-        <div class="div33">{{course.curators_description}} </div>
+        <div class="div33">{{ course.curators_description }}</div>
         <img class="testimonials-child1" alt="" src="static/images/group-51.svg" />
-      </div>
-      <b class="b11">Список студентов</b>
-      <div class="line-div"></div>
-      <div class="frame-child3"></div>
-      <div class="frame-child4"></div>
-      <div class="group3">Общее фото группы</div>
-
-      <div class="group-parent2">
-        <img class="group-child31" alt="" src="static/images/group-40@2x.png" />
-
-        <div class="div34">
-          Студент 3 курса, супер пупер мега программист, самый активный человек
-          года
-        </div>
-        <div class="rectangle-parent12">
-          <div class="group-child32"></div>
-          <div class="div35">Глинка Илья</div>
-        </div>
-      </div>
-      <div class="group-parent3">
-        <img class="group-child31" alt="" src="./public/group-40@2x.png" />
-
-        <div class="div34">
-          Студент 3 курса, супер пупер мега программист, самый активный человек
-          года
-        </div>
-        <div class="rectangle-parent12">
-          <div class="group-child32"></div>
-          <div class="div37">Бирюков Тимур</div>
-        </div>
-      </div>
-      <div class="group-parent4">
-        <img class="group-child31" alt="" src="./public/group-40@2x.png" />
-
-        <div class="div34">
-          Студент 3 курса, супер пупер мега программист, самый активный человек
-          года
-        </div>
-        <div class="rectangle-parent14" id="groupContainer">
-          <div class="group-child32"></div>
-          <div class="div35">Кочубей Дмитрий</div>
-        </div>
-      </div>
-      <div class="group-parent5">
-        <img class="group-child31" alt="" src="./public/group-40@2x.png" />
-
-        <div class="div34">
-          Студент 3 курса, супер пупер мега программист, самый активный человек
-          года
-        </div>
-        <div class="rectangle-parent15">
-          <div class="group-child32"></div>
-          <div class="div41">Лаптуров Александр</div>
-        </div>
-      </div>
-      <div class="group-parent6">
-        <img class="group-child39" alt="" src="./public/group-40@2x.png" />
-
-        <div class="div42">
-          Студент 3 курса, супер пупер мега программист, самый активный человек
-          года
-        </div>
-        <div class="rectangle-parent16">
-          <div class="group-child40"></div>
-          <div class="div43">Нихолат Александра</div>
-        </div>
-      </div>
-      <div class="group-parent7">
-        <img class="group-child31" alt="" src="./public/group-40@2x.png" />
-
-        <div class="div34">
-          Студент 3 курса, супер пупер мега программист, самый активный человек
-          года
-        </div>
-        <div class="rectangle-parent17">
-          <div class="group-child42"></div>
-          <div class="div35">Озитен Дарья</div>
-        </div>
-      </div>
-      <div class="group-parent8">
-        <img class="group-child31" alt="" src="./public/group-40@2x.png" />
-
-        <div class="div46">
-          Студент 3 курса, супер пупер мега программист, самый активный человек
-          года
-        </div>
-        <div class="rectangle-parent18">
-          <div class="group-child42"></div>
-          <div class="div47">Глинка Илья</div>
-        </div>
-      </div>
-      <div class="group-parent9">
-        <img class="group-child31" alt="" src="./public/group-40@2x.png" />
-
-        <div class="div34">
-          Студент 3 курса, супер пупер мега программист, самый активный человек
-          года
-        </div>
-        <div class="rectangle-parent19">
-          <div class="group-child46"></div>
-          <div class="div35">Глинка Илья</div>
-        </div>
-      </div>
-      <div class="group-parent10">
-        <img class="group-child31" alt="" src="./public/group-40@2x.png" />
-
-        <div class="div34">
-          Студент 3 курса, супер пупер мега программист, самый активный человек
-          года
-        </div>
-        <div class="rectangle-parent19">
-          <div class="group-child46"></div>
-          <div class="div35">Глинка Илья</div>
-        </div>
-      </div>
-      <div class="group-parent11">
-        <img class="group-child31" alt="" src="static/images/group-40@2x.png" />
-
-        <div class="div34">
-          Студент 3 курса, супер пупер мега программист, самый активный человек
-          года
-        </div>
-        <div class="rectangle-parent19">
-          <div class="group-child46"></div>
-          <div class="div35">Глинка Илья</div>
-        </div>
-      </div>
-      <img
-        class="you-can-do-with-skilline5"
-        alt=""
-        src="{{ url_for('static', filename='images/' + course.groups_img) }}"
-      />
-      <div class="group-parent12">
-        <div class="rectangle-parent22">
-          <div class="group-child51"></div>
-          <img class="subtract-icon2" alt="" src="static/imagesc/subtract.svg" />
-        </div>
-        <div class="div54">Главная</div>
-        <div class="div55">Сайт РФ ПГУ</div>
-        <div class="div56">Контакты</div>
-        <div class="div57">Группы</div>
-        <div class="strada-iuri-gagarin3">Strada Iuri Gagarin 12, Rîbniţa</div>
-        <b class="b13">ИиПИ</b>
-        <div class="div58">(00373)-(555)-2-09-03</div>
-      </div>
-      <div class="group-frame">
-        <div class="group-wrapper1">
-          <div class="group-wrapper1">
-            <img class="group-child52" alt="" src="static/images/ellipse-1063.svg" />
-
-            <b class="b14">Группа {{course.name}}</b>
-            <div class="group-child53"></div>
-            <img class="group-child54" alt="" src="static/images/ellipse-1063.svg" />
-
-
-            <div class="group-child55"></div>
-            <div class="group-child56"></div>
-          </div>
-        </div>
-      </div>
     </div>
+<b class="b11">Список студентов</b>
+     <div class="students-container">
+        <div class="students-grid">
+            {% for student in students %}
+            {%if course.course== student.course%}
+                <div class="student-card"><a href="/student{{ student.id }}" id="{{ student.id }}">
+                    <img src="{{ url_for('static', filename='images/' + student.img) }}" alt="Фото {{ student.name }}" class="student-photo">
+                    <div class="student-info">
+                        <h2 class="student-name">{{ student.name }}</h2>
+                        <p class="student-description">Студент {{ student.course }} курса</p>
+                    </div></a>
+                </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+</a>
+</div>
+
+
+    <div class="line-div"></div>
+    <div class="frame-child3"></div>
+    <div class=""></div>
+    <div class="group3">Общее фото группы</div>
+
+    <img class="you-can-do-with-skilline5" alt="" src="{{ url_for('static', filename='images/' + course.groups_img) }}" />
+
+    <div class="group-frame">
+          <div class="group-wrapper1">
+                <img class="group-child52" alt="" src="static/images/ellipse-1063.svg" />
+                <b class="b14">Группа {{ course.name }}</b>
+                <div class="group-child53"></div>
+            </div>
+
+    </div>
+  </section>
+</div>
 {% endblock %}

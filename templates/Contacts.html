@@ -1,112 +1,88 @@
-{% extends 'base.html'%}
-{% block head%}
-<link rel="stylesheet" href="{{ url_for('static',filename='css/frame-120.css') }}">
+{% extends 'base.html' %}
+{% block head %}
 <meta name="viewport" content="initial-scale=1, width=device-width" />
+<link rel="stylesheet" href="static/css/index.css" />
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+    .content {
+        display: flex;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        height: 95%;
+        box-sizing: border-box;
+        margin-top:20px;
+        margin-left:20px;
+    }
+    .form-container, .contact-info {
+        padding: 20px;
+        width: 50%;
+        box-sizing: border-box;
+    }
+    .form-container {
+        border-right: 1px solid #ccc;
+    }
+    h1 {
+        margin-top: 0;
+        font-size: 1.1em;
+    }
+    label {
+        display: block;
+        margin: 10px 0 5px;
+    }
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    button {
+        padding: 10px 15px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
 {% endblock %}
-{% block title%}Главная страница{% endblock %}
+{% block title %}Контакты{% endblock %}
 
-{% block body%}
-    <div class="rectangle-top">
-      <div class="frame-child1"></div>
-      <div class="leave-us-your-info">
-        <div class="info-details">
-          <div class="info-details-child"></div>
-          <div class="info-details-item"></div>
-          <div class="div13">Ваше полное имя (обязательный)</div>
-          <div class="info-details-inner"></div>
-          <div class="div14">Ваша почта (обязательный)</div>
-          <div class="info-details-child1"></div>
-          <div class="div15">Тема</div>
-          <div class="info-details-child2"></div>
-          <div class="div16">Ваше сообщение (обязательный)</div>
-          <div class="send-message">
-            <div class="send-message1">
-              <div class="send-message2">
-                <div class="send-message-child"></div>
-                <div class="div17">Отправить сообщение</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <b class="b6">Оставьте Свое сообщение </b>
-      </div>
-      <div class="contact-information">
-        <b class="b6">Contact information</b>
-        <div class="gmail">
-          <div class="gmail-child"></div>
-          <div class="email">Email:</div>
-          <div class="irishkaglimbovskayagmailcom">
-            irishka.glimbovskaya@gmail.com
-          </div>
-          <div class="skype">Skype:</div>
-          <div class="yourusername">@yourusername</div>
-          <div class="telegram">Telegram:</div>
-          <div class="yourusername1">@yourusername</div>
-          <div class="gmail-item"></div>
-          <img class="consmail-icon" alt="" src="./public/consmail.svg" />
-        </div>
-        <div class="mobile">
-          <div class="gmail-child"></div>
-          <div class="support-services">Support services:</div>
-          <div class="div18">15369</div>
-          <div class="office">Office:</div>
-          <div class="div19">+58 (021)356 587 235</div>
-          <div class="personal">Personal:</div>
-          <div class="div20">+58 (021)356 587 235</div>
-          <div class="gmail-item"></div>
-          <img class="consmail-icon" alt="" src="./public/iconsmobile.svg" />
-        </div>
-        <div class="location">
-          <div class="gmail-child"></div>
-          <div class="div21">Страна:</div>
-          <div class="div22">ПМР</div>
-          <div class="div23">Город:</div>
-          <div class="div24">Рыбница</div>
-          <div class="div25">Улица:</div>
-          <div class="div26">ул. Гагарина, 12</div>
-          <div class="gmail-item"></div>
-          <img class="consmail-icon" alt="" src="./public/conslocation.svg" />
-        </div>
-      </div>
-      <div class="frame-div">
-        <div class="rectangle-wrapper2">
-          <div class="group-child28"></div>
-        </div>
-        <div class="div27">Главная</div>
-        <div class="div28">Сайт РФ ПГУ</div>
-        <div class="div29">Контакты</div>
-        <div class="div30">Группы</div>
-        <div class="strada-iuri-gagarin2">Strada Iuri Gagarin 12, Rîbniţa</div>
-        <b class="b8">ИиПИ</b>
-        <img
-          class="standard-collection-6"
-          alt=""
-          src="./public/standard-collection-6.svg"
-        />
+{% block body %}
+<div class="content">
+    <div class="form-container">
+        <h1>Напишите отзыв, предложение, сообщение:</h1>
+        <form method="POST" action="{{ url_for('Contacts') }}">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name">
 
-        <div class="div31">(00373)-(555)-2-09-03</div>
-      </div>
-      <div class="vector-container">
-        <img class="group-child29" alt="" src="./public/ellipse-1062.svg" />
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" rows="5"></textarea>
 
-        <b class="b9">Контакты</b>
-        <div class="group-child30"></div>
-      </div>
+            <button type="submit">Отправить</button>
+        </form>
     </div>
+    <div class="contact-info">
+        <h1>Контактная информация</h1>
+        <p>Кафедра информатики и программной инженерии</p>
+        <p>Улица Гагарина 12</p>
+        <p>Город Рыбница</p>
+        <p>Номер: (00373)-(555)-2-09-03</p>
 
-    <script>
-      var linkContainer = document.getElementById("linkContainer");
-      if (linkContainer) {
-        linkContainer.addEventListener("click", function (e) {
-          window.location.href = "./frame.html";
-        });
-      }
-      
-      var linkContainer1 = document.getElementById("linkContainer1");
-      if (linkContainer1) {
-        linkContainer1.addEventListener("click", function (e) {
-          window.location.href = "./frame1.html";
-        });
-      }
-      </script>
+    </div>
+</div>
 {% endblock %}

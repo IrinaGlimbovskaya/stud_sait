@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+{% block head%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        th:first-child, td:first-child {
+            border-left: 1px solid #ddd;
+        }
+        th:last-child, td:last-child {
+            border-right: 1px solid #ddd;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+{% endblock %}
+{% block title %}Список годов дипломных работ{% endblock %}
+{% block body%}
+    <div class="container">
+        <h1>Список годов дипломных работ</h1>
+        <form action="{{ url_for('search_teacher_diplom') }}" method="get">
+            <label for="teacher">Поиск по фамилии преподавателю:</label>
+            <input type="text" id="teacher" name="teacher" placeholder="Введите фамилию преподавателя">
+            <button type="submit">Поиск</button>
+        </form>
+
+        <ul>
+            {% set displayed_years = [] %}
+            {% for year in years %}
+                {% if year.year not in displayed_years %}
+                    <li><a href="{{ url_for('diplom', year=year.year) }}">{{ year.year }}</a></li>
+                    {% set _ = displayed_years.append(year.year) %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

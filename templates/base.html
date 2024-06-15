@@ -1,129 +1,190 @@
-    <!doctype html>
+<!doctype html>
 <html lang="ru">
 <head>
-    {% block head%}{% endblock %}
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/base.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/global.css') }}">
-
-
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@600;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400;600;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400;600;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
-    />
-<title>{% block title%}Главная страница{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <title>{% block title %}Главная страница{% endblock %}</title>
+    {% block head %}{% endblock %}
 </head>
 
-<body>
-      <div class="rectangle-parent">
+<body id="body">
+    <div class="rectangle-parent">
         <div class="header">
-        <div class="container">
-          <b class="b"><a href ="/home">&lt;ПИ /&gt;</a></b>
-          <div class="navigation">
-            <div class="link">
-              <div class="about"><a href ="/home">Главная</a></div>
+            <div class="container">
+                <b class="b"><a href="/home">&lt;ПИ /&gt;</a></b>
+                <div class="navigation">
+                    <div class="link">
+                        <div class="about"><a href="/home">Главная</a></div>
+                    </div>
+                    <div class="link" id="linkContainer1">
+                        <div class="about"><a href="/ListOfGroups">Группы</a></div>
+                    </div>
+                    <div class="link2">
+                        <div class="about"></div>
+                    </div>
+                    <div class="link" id="linkContainer">
+                        <div class="about"><a href="/Contacts">Контакты</a></div>
+                    </div>
+                    <div class="link">
+                        <div class="about"><a href="/Lists">Списки</a></div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="actions">
+                        <div class="icon-button" id="themeToggleBtn">
+                            <img class="icon" alt="" src="static/images/icon.svg">
+                        </div>
+                        <div class="icon-button">
+                            <img class="microphone-icon" alt="Микрофон" src="static/images/microphone.svg" id="start-record-btn">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="link1" id="linkContainer1">
-                <div class="about"><a href ="/ListOfGroups">Группы</a></div>
-            </div>
-            <div class="link2">
-              <div class="about"></div>
-            </div>
-            <div class="link" id="linkContainer">
-              <div class="about"><a href ="/Contacts">Контакты</a></div>
-            </div>
-            <div class="link" >
-              <div class="about"><a href ="/List">Списки</a></div>
-            </div>
-              <div class="link" >
-              <div class="about"><a href ="/Map">Карта сайта</a></div>
-            </div>
-            <div class="divider"></div>
-
-            <div class="actions">
-    			<div class="icon-button">
-        			<img class="icon" alt="" src="static/images/icon.svg" id="themeToggle">
-
-    			</div>
-			</div>
-          </div>
         </div>
-      </div>
 
-{% block body%}{% endblock %}
-<script>
- document.addEventListener("DOMContentLoaded", function() {
-    var groupElement = document.querySelector('.group');
-    groupElement.addEventListener('click', function() {
-        window.location.href = 'frame116.html';
-    });
-});
-</script>
+<main>
+{% block body %}{% endblock %}
+</main>
+         <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-links">
+                    <div class="footer-link"><a href="/">Главная</a></div>
+                    <div class="footer-link"><a href="https://rfpgu.ru/">Сайт РФ ПГУ</a></div>
+                    <div class="footer-link"><a href="/Contacts">Контакты</a></div>
+                    <div class="footer-link"><a href="/ListOfGroups">Группы</a></div>
+                    <div class="footer-link"><a href="/Lists">Списки</a></div>
+                    <div class="footer-link"><a href="https://www.facebook.com/groups/iipirfpgu?locale=ru_RU"> Фейсбук кафедры информатики и программной инженерии РФПГУ</a></div>
+                </div>
+                <div class="footer-info">
+                    <div class="footer-address">Strada Iuri Gagarin 12, Rîbniţa</div>
+                    <h1 class="footer-title">ИиПИ</h1>
+                    <div class="footer-phone">(00373)-(555)-2-09-03</div>
+                    <img class="subtract-icon" loading="lazy" alt="" src="static/images/subtract.svg">
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Получаем кнопки микрофона и переключения темы
+        const startRecordBtn = document.getElementById('start-record-btn');
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.getElementById('body');
+
+        // Проверка на поддержку распознавания речи
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!SpeechRecognition) {
+            alert("Ваш браузер не поддерживает распознавание речи.");
+        }
+
+        // Подключаем распознавание речи
+        const recognition = new SpeechRecognition();
+        recognition.lang = 'ru-RU';
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+
+        let isRecording = false;
+
+        // Словарь для сопоставления произнесенных слов с URL-адресами и темами
+        const speechToActionMapping = {
+            'главная': () => { window.location.href = '/home'; },
+            'группы': () => { window.location.href = '/ListOfGroups'; },
+            'контакты': () => { window.location.href = '/Contacts'; },
+            'списки': () => { window.location.href = '/Lists'; },
+            'светлая тема': () => {
+                setTheme('light');
+            },
+            'тёмная тема': () => {
+                setTheme('dark');
+            }
+        };
+
+        // Обработчик нажатия на кнопку микрофона
+        startRecordBtn.addEventListener('click', () => {
+            if (!isRecording) {
+                console.log("Начало записи...");
+                recognition.start();
+                isRecording = true;
+            } else {
+                console.log("Остановка записи...");
+                recognition.stop();
+                isRecording = false;
+            }
+        });
+
+        // Обработчик результатов распознавания речи
+        recognition.onresult = function(event) {
+            const speechToText = event.results[0][0].transcript.trim().toLowerCase();
+            console.log("Результат распознавания:", speechToText);
+
+            if (speechToActionMapping[speechToText]) {
+                console.log("Выполнение действия для:", speechToText);
+                speechToActionMapping[speechToText]();
+            } else {
+                console.log("Совпадение не найдено для:", speechToText);
+            }
+        };
+
+        // Обработчики событий для отладки
+        recognition.onaudiostart = function() {
+            console.log("Аудио началось.");
+        };
+
+        recognition.onsoundstart = function() {
+            console.log("Звук начался.");
+        };
+
+        recognition.onspeechstart = function() {
+            console.log("Речь началась.");
+        };
+
+        recognition.onspeechend = function() {
+            console.log("Конец речи. Остановка распознавания...");
+            recognition.stop();
+            isRecording = false;
+        };
+
+        recognition.onerror = function(event) {
+            console.log("Ошибка распознавания речи:", event.error);
+        };
+
+        recognition.onnomatch = function(event) {
+            console.log("Нет совпадений для распознанного текста.");
+        };
+
+        // Получаем кнопку переключения темы
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+
+        // Обработчик нажатия на кнопку переключения темы
+        themeToggleBtn.addEventListener('click', () => {
+            toggleTheme();
+        });
+
+        // Функция переключения темы
+        function toggleTheme() {
+            const currentTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
+            setTheme(currentTheme);
+        }
+
+        // Функция установки темы
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                body.classList.remove('light-theme');
+                body.classList.add('dark-theme');
+            } else {
+                body.classList.remove('dark-theme');
+                body.classList.add('light-theme');
+            }
+            localStorage.setItem('theme', theme);
+        }
+
+        // Устанавливаем тему при загрузке страницы
+        window.onload = function() {
+            const storedTheme = localStorage.getItem('theme') || 'light';
+            setTheme(storedTheme);
+        }
+    </script>
 </body>
 </html>

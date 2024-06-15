@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вы победили!</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #ffcc00; /* желтый цвет */
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        canvas {
+            position: fixed;
+            pointer-events: none;
+        }
+        button {
+            padding: 8px; /* Уменьшено значение padding */
+            background-color: #ffcc00;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 5px; /* Добавлено значение margin-top */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1> {{ player_name }}!</h1>
+    <p>Вы не угадали загаданное число</p>
+    <button onclick="window.location.href='{{ url_for('bull_cow_log') }}'">Играть еще раз</button>
+    <button onclick="window.location.href='{{ url_for('index') }}'">Перейти на главную</button>
+    <!-- Добавляем элемент canvas для конфетти -->
+
+</body>
+</html>

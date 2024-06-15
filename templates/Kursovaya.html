@@ -1,64 +1,32 @@
-{% extends 'base.html'%}
-{% block head%}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Список дипломных работ</title>
-    <style>
+{% extends 'base.html' %}
 
-        .c {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        th:first-child, td:first-child {
-            border-left: 1px solid #ddd;
-        }
-        th:last-child, td:last-child {
-            border-right: 1px solid #ddd;
-        }
-        tr:hover {
-            background-color: #f5f5f5;
-        }
+{% block title %}Курсовые работы за {{ year }}{% endblock %}
 
-    </style>
+{% block head %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Diplom.css') }}">
 {% endblock %}
-{% block title%}Список курсовых работ{% endblock %}
 
 {% block body%}
-    <div class="c">
-        <h1>Список курсовых работ за 10 лет</h1>
-        <table>
-            <thead>
+    <h1>Курсовые работы за {{ year }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Предмет</th>
+                <th>Имя студента</th>
+                <th>Тема курсовой работы</th>
+                <th>Преподаватель</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
                 <tr>
-                    <th>Год</th>
-                    <th>Имя файла для скачивания</th>
+                    <td>{{ item.subject }}</td>
+                    <td>{{ item.name_student }}</td>
+                    <td>{{ item.name_coursework }}</td>
+                    <td>{{ item.name_teacher }}</td>
                 </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2020</td>
-                    <td><a href="Примерные темы дипломных работ_2020.docx" download>spisokrabot.docx</a></td>
-                </tr>
-                <!-- Здесь можно добавить другие записи -->
-            </tbody>
-        </table>
-    </div>
-</body>
-
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

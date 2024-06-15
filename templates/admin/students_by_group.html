@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students By Group</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .admin-navbar {
+            background-color: #007bff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .admin-navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .admin-navbar a:hover {
+            background-color: #0056b3;
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Центрирование содержимого */
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 10px; /* Добавлен отступ между кнопками */
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: red;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            const form = document.getElementById('characteristic_form');
+            const radios = form.querySelectorAll('input[name="student_id"]');
+            let isChecked = false;
+            for (const radio of radios) {
+                if (radio.checked) {
+                    isChecked = true;
+                    break;
+                }
+            }
+            if (!isChecked) {
+                document.getElementById('error-message').innerText = 'Пожалуйста, выберите студента.';
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+{% include 'admin_menu.html' %}
+    <div class="content">
+        <h1>Students in Group {{ group_name }}</h1>
+        <form id="characteristic_form" method="POST" action="{{ url_for('mycustomview1.create_characteristic') }}" onsubmit="return validateForm()">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Name</th>
+                        <th>Course</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students_data %}
+                        <tr>
+                            <td><input type="radio" name="student_id" value="{{ student.id }}"></td>
+                            <td>{{ student.name }}</td>
+                            <td>{{ student.course }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button type="submit">Create Characteristic</button>
+            <div id="error-message" class="error-message"></div>
+        </form>
+        <!-- Форма для создания отчета по группе -->
+        <form method="POST" action="{{ url_for('mycustomview1.create_group_report') }}">
+            <input type="hidden" name="group_name" value="{{ group_name }}">
+            <button type="submit">Create Group Report</button>
+        </form>
+    </div>
+</body>
+</html>

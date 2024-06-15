@@ -2,28 +2,7 @@
 {% block head%}
  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .button {
-            display: inline-block;
-            background-color: darkorange;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
-        }
-        .button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="static/css/list.css" />
 {% endblock %}
 {% block title%}Списки работ и нейронных сетей{% endblock %}
 
@@ -41,5 +20,4 @@
         <h1>Список нейронных сетей для программирования</h1>
         <a href="/AI" class="button">Посмотреть</a>
     </div>
-</body>
 {%endblock%}

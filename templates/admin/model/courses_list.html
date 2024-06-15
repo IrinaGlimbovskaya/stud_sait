@@ -1,0 +1,16 @@
+{% extends 'admin/model/list.html' %}
+
+{% block table %}
+{{ super() }}
+
+<!-- Добавьте вашу кнопку в заголовок таблицы -->
+<button onclick="myFunction()">My Custom Button</button>
+
+<script>
+    function myFunction() {
+        alert("Hello! You clicked the custom button.");
+        // Добавьте свою логику, которая будет выполняться при нажатии кнопки
+    }
+</script>
+
+{% endblock %}

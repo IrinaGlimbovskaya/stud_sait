@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% block head%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты поиска</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        th:first-child, td:first-child {
+            border-left: 1px solid #ddd;
+        }
+        th:last-child, td:last-child {
+            border-right: 1px solid #ddd;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+{% endblock %}
+{% block body%}
+        <h1>Результаты поиска по запросу "{{ teacher_name }}"</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Год</th>
+                    <th>Предмет</th>
+                    <th>Имя студента</th>
+                    <th>Тема курсовой работы</th>
+                    <th>Преподаватель</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for teacher in teachers %}
+                    <tr>
+                        <td>{{ teacher.year }}</td>
+                        <td>{{ teacher.subject }}</td>
+                        <td>{{ teacher.name_student }}</td>
+                        <td>{{ teacher.name_coursework }}</td>
+                        <td>{{ teacher.name_teacher }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Попробуйте еще раз</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1000px; /* Увеличено значение max-width */
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .game-info {
+            flex: 2; /* Увеличено значение flex */
+            padding-right: 10px; /* Увеличено значение padding-right */
+        }
+
+        h1, p {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        img {
+            max-width: 80px; /* Увеличено значение max-width */
+            margin: 5px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 8px; /* Уменьшено значение padding */
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 5px; /* Добавлено значение margin-top */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="game-info">
+            <h1>Попробуйте еще раз!</h1>
+            <p> Быков: {{ bulls }}, Коров: {{ cows }}</p>
+
+            <div style="display: flex; justify-content: center;"> <!-- Добавлен стиль для центрирования div-ов -->
+                {% for _ in range(bulls) %}
+                    <img src="{{ url_for('static', filename='images/bull.png') }}" alt="Бык">
+                {% endfor %}
+            </div>
+
+            <div style="display: flex; justify-content: center;"> <!-- Добавлен стиль для центрирования div-ов -->
+                {% for _ in range(cows) %}
+                    <img src="{{ url_for('static', filename='images/cow.png') }}" alt="Корова">
+                {% endfor %}
+            </div>
+
+            <div id="input-container" style="display: flex; flex-direction: column; align-items: center;">
+                <label for="guessedNumber">Введите новое число:</label>
+                <input type="text" id="guessedNumber" name="guessedNumber" pattern="\d{4}" required>
+                <button id="submitButton">Отправить</button>
+                <p id="attemptsCount">Попыток: {{ attempts_count }} </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+// Добавлен счетчик попыток
+        var attemptsCount = 0;
+
+        document.getElementById("submitButton").addEventListener("click", function() {
+            var guessedNumber = document.getElementById("guessedNumber").value;
+            var playerName = "{{ player_name }}";
+
+            if (!/^\d{4}$/.test(guessedNumber)) {
+                alert("Пожалуйста, введите четырехзначное число.");
+                return;
+            }
+
+            // Обновление счетчика попыток
+            attemptsCount++;
+            //document.getElementById("attemptsCount").innerText = "Попыток: " + attemptsCount;
+
+            if (attemptsCount >= 10) {
+                alert("Вы проиграли! Начните сначала.");
+                // Дополнительные действия при достижении лимита попыток
+            } else {
+                // Переход на другую страницу Flask
+                window.location.href = `/bull_cow/${playerName}/${guessedNumber}`;
+            }
+        });
+
+         window.onload = function() {
+                var flashMessages = document.getElementById('flash-messages');
+                if (flashMessages) {
+                    var messages = flashMessages.getElementsByClassName('error');
+                    if (messages.length > 0) {
+                        // Показываем всплывающее сообщение
+                        showPopup(messages[0].innerText);
+                    }
+                }
+            };
+
+            function showPopup(message) {
+                alert(message);
+                // Дополнительные действия при необходимости
+            }
+    </script>
+</body>
+</html>
