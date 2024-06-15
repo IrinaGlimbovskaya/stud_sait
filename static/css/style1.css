@@ -1,0 +1,11 @@
+body {
+    background-color: lightyellow;
+    color: black;
+}
+
+#myElement {
+    background-color: yellow;
+    color: black;
+    padding: 10px;
+    border: 1px solid black;
+}

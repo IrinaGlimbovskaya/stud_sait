@@ -1,3 +1,37 @@
+.light-theme {
+    background-color: #ffffff; /* Цвет фона */
+
+}
+
+.light-theme .header {
+    background-color: #ffffff; /* Цвет фона для шапки */
+
+}
+
+.light-theme main {
+    background-color: #ffffff; /* Цвет фона для основного блока */
+
+}
+
+/* Стили для темной темы */
+.dark-theme {
+    background-color: #808080; /* Цвет фона */
+    color: #ffffff; /* Цвет текста */
+}
+
+.dark-theme .header {
+    background-color: #808080; /* Цвет фона для шапки */
+    color: #ffffff; /* Цвет текста для шапки */
+}
+
+.dark-theme main {
+    background-color: #808080; /* Цвет фона для основного блока */
+    color: #ffffff; /* Цвет текста для основного блока */
+}
+main {
+    width: 100%;
+    max-width: 100%;
+}
 .rectangle-parent {
   background-color: var(--color-gray-100);
   flex-direction: column;
@@ -10,6 +44,15 @@
   color: var(--color-darkslateblue);
   font-family: var(--font-poppins);
 }
+button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .microphone-icon {
+            width: 30px;
+            cursor: pointer;
+        }
+
 
 .frame-parent,
 .header-parent,
@@ -60,7 +103,7 @@
   padding: 28px 80px;
   z-index: 1;
   text-align: center;
-  font-size: 30px;
+  font-size: 50px;
   color: var(--color-darkslateblue);
   font-family: var(--body2-medium-all);
 }
@@ -105,8 +148,14 @@
   justify-content: center;
   min-width: 102px;
   white-space: nowrap;
-}
 
+}
+.container a{
+text-decoration: none;
+font-family: var(--font-nunito-sans);
+color: var(--color-darkslateblue);
+
+}
 .about,
 .b {
   position: relative;
@@ -131,6 +180,7 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
+  font-size:20px;
 }
 .link-container,
 .link1 {
@@ -255,3 +305,59 @@
     box-sizing: border-box;
   }
 }
+
+.footer {
+    position: relative; /* Изменено с absolute на relative */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #808080; /* Серый цвет фона */
+    padding: 20px;
+    font-size: 12 px;
+    color: #ffffff; /* Цвет текста */
+    }
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Разделение на две колонки */
+    align-items: flex-start; /* Выровнять элементы по верху */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links, .footer-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.footer-links {
+    text-align: left; /* Текст слева */
+}
+
+.footer-link {
+    margin: 10px 0; /* Отступы между пунктами меню */
+}
+
+.footer-info {
+    text-align: right; /* Текст справа */
+}
+
+.footer-address, .footer-title, .footer-phone {
+    margin: 10px 0; /* Отступы между текстовыми блоками */
+}
+
+.footer a {
+    color: #ffffff; /* Цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Добавляем подчеркивание при наведении */
+}
+
+.subtract-icon {
+    margin-top: 20px; /* Отступ сверху для иконки */
+}
+
+

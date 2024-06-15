@@ -1,0 +1,262 @@
+.rectangle-parent11 {
+  width: 100%;
+  position: absolute;
+
+  text-align: center;
+
+  color: var(--color-gray-200);
+  font-family: var(--font-poppins);
+  bottom: 25%;
+}
+.curator-name {
+    width: 450px; /* Установите желаемую ширину */
+    word-wrap: break-word; /* Обеспечивает перенос слов при переполнении */
+    font-size: 1.1em; /* Настройте размер шрифта по вашему усмотрению */
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+.frame-child2 {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: var(--color-gray-100);
+  width: 1440px;
+  height: 1450px;
+}
+.b11,
+.testimonials3 {
+  position: absolute;
+  font-family: var(--font-nunito-sans);
+  text-align: left;
+}
+.testimonials3 {
+  top: 1049px;
+  left: 324px;
+  width: 823px;
+  height: 347px;
+  font-size: 60px;
+  color: var(--color-darkslateblue);
+}
+
+.div32 {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  display: inline-block;
+  width: 543px;
+  height: 35px;
+  font-size:60px; /* Новый размер шрифта */
+  word-wrap: break-word;
+}
+.div32 {
+  top: 0;
+  left: 60px;
+  font-size: 16px; /* Новый размер шрифта */
+  letter-spacing: 0.2em;
+  color: var(--color-darkslateblue-100);
+  width: 272px;
+  height: 11px;
+}
+.mask-group-icon4 {
+  position: absolute;
+  top: 0;
+  left: 417.2px;
+  width: 303.4px;
+  height: 295.9px;
+  object-fit: cover;
+}
+
+.testimonials-child,
+.testimonials-item {
+  position: absolute;
+  top: 207.9px;
+  left: 454.6px;
+  box-shadow: 2px 4px 60px rgba(41, 44, 124, 0.1);
+  height: 139.1px;
+}
+.testimonials-child {
+  border-radius: var(--br-xl);
+  background-color: var(--gray-default);
+  width: 368.4px;
+}
+.testimonials-item {
+  border-radius: var(--br-xl) 0 0 var(--br-xl);
+  background-color: #f77766;
+  width: 7.6px;
+}
+.testimonials-inner {
+  position: absolute;
+  top: 228.2px;
+  left: 483.9px;
+  border-right: 1px solid #bdbdd1;
+  box-sizing: border-box;
+  width: 1px;
+  height: 59.8px;
+}
+.line-icon {
+  position: absolute;
+  top: 13px;
+  left: 8px;
+  max-height: 100%;
+  width: 43.3px;
+}
+.div33 {
+  position: absolute;
+  top: 226.3px;
+  left: 501.7px;
+  font-size: 18px; /* Новый размер шрифта */
+  letter-spacing: 0.02em;
+  line-height: 180%;
+  color: #5f5f7e;
+  display: inline-block;
+  width: 289.3px;
+  height: 67.6px;
+}
+.testimonials-child1 {
+  position: absolute;
+  top: 121.7px;
+  left: 708.7px;
+  width: 43.3px;
+  height: 33.8px;
+}
+
+.b11 {
+  top: 1508px;
+  left: 568px;
+  font-size: 26px;
+  letter-spacing: 0.2em;
+  color: var(--color-darkslateblue-100);
+}
+.frame-child3,
+.line-div {
+  position: absolute;
+  top: 1525.5px;
+  left: 43.5px;
+  border-top: 1px solid var(--color-darkslateblue-100);
+  box-sizing: border-box;
+  width: 501px;
+  height: 1px;
+}
+.frame-child3 {
+  left: 895.5px;
+}
+.frame-child4 {
+  position: absolute;
+  top: 211px;
+  left: 935.5px;
+  border-radius: 50%;
+  background-color: var(--color-deepskyblue-100);
+  width: 52.5px;
+  height: 56.6px;
+  transform: rotate(180deg);
+  transform-origin: 0 0;
+}
+.group3 {
+  position: absolute;
+  top: 239.3px;
+  left: 530px;
+  font-size: var(--font-size-17xl);
+  line-height: 160%;
+  font-weight: 500;
+  color: var(--color-darkslateblue);
+  text-align: left;
+  display: inline-block;
+  width: 470.8px;
+  height: 89.9px;
+}
+.you-can-do-with-skilline5 {
+  position: absolute;
+  top: 343px;
+  left: 254px;
+  width: 932px;
+  height: 632px;
+  object-fit: contain;
+}
+.group-frame,
+.group-wrapper1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 166.8px;
+}
+.group-frame {
+  top: 114px;
+  left: 481px;
+  text-align: left;
+  font-size: var(--font-size-17xl);
+  color: var(--color-darkslateblue);
+  font-family: var(--font-nunito-sans);
+}
+.b14,
+.group-child52 {
+  position: absolute;
+  top: 3.6px;
+  left: 0;
+  width: 64.3px;
+  height: 59px;
+}
+.b14 {
+  top: 23.1px;
+  left: 40.7px;
+  line-height: 180%;
+  display: inline-block;
+  width: 761.3px;
+  height: 50.9px;
+}
+.group-child53 {
+  position: absolute;
+  top: 0;
+  left: 76.8px;
+  border-radius: 50%;
+  background-color: var(--color-darkslateblue);
+  width: 19.4px;
+  height: 17.8px;
+}
+
+.students-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+.students-container h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+.student-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+}
+.student-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.student-info {
+    margin-top: 15px;
+}
+
+.student-name {
+    font-size: 2em;
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+.student-description {
+    font-size: 1.5em;
+    color: #666;
+}

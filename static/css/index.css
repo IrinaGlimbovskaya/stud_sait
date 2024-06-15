@@ -318,6 +318,7 @@
   height: 366px;
   object-fit: cover;
   z-index: 2;
+  border-radius: 15px;
 }
 .rectangle-group {
   height: 397.8px;
@@ -325,6 +326,7 @@
   position: relative;
   min-width: 350px;
   max-width: 100%;
+
 }
 .frame-div {
   align-self: stretch;
@@ -349,10 +351,12 @@
 }
 .div {
   flex: 1;
-  position: relative;
-  line-height: 20.6px;
+  position: absolute;
+  line-height: 10px;
+  font-size: 15px;
   font-weight: 500;
   z-index: 1;
+
 }
 .rectangle-container {
   width: 302px;
@@ -374,7 +378,7 @@
   max-width: 100%;
 }
 .frame-wrapper2 {
-  width: 1017.8px;
+  width: 100%;
   flex-direction: row;
   justify-content: center;
   padding: 0 var(--padding-xl);
@@ -518,19 +522,6 @@
   z-index: 1;
 }
 
-.footer {
-  position: absolute; /* Используем fixed для центрирования по всему экрану */
-  bottom: 0; /* Размещаем футер внизу */
-  left: 0; /* Выравниваем футер слева */
-  width: 100%; /* Занимаем всю ширину экрана */
-
-  padding: 20px;
-  display: flex; /* Используем flexbox для центрирования содержимого */
-  justify-content: center; /* Центрируем содержимое по горизонтали */
-  align-items: center; /* Центрируем содержимое по вертикали */
-
-}
-
 
 
 .rectangle-parent1 {
@@ -563,6 +554,7 @@
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
+
 }
 .frame-child8 {
   height: 30.4px;
@@ -1028,6 +1020,17 @@
   text-align: center;
   z-index: 1;
 }
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 270px;
+    margin-left: 244px;
+
+}
+
 .rectangle-parent10 {
   cursor: pointer;
   border: 0;
@@ -1046,12 +1049,13 @@
   white-space: nowrap;
   z-index: 3;
 }
+
 .rectangle-parent10:hover {
   background-color: #c25900;
 }
 .group-div {
   height: 678.9px;
-  width: 1163.3px;
+  width: 100%;
   position: relative;
   max-width: 100%;
   z-index: 2;
@@ -1060,12 +1064,13 @@
 .you-can-do-with-skilline-parent {
   display: flex;
   justify-content: flex-start;
-  max-width: 100%;
+  max-width: 50%;
+
 }
 .frame-wrapper3 {
-  align-self: stretch;
-  flex-direction: row;
-  align-items: flex-start;
+  max-width: 70%; /* Максимальная ширина */
+  margin: 0 auto; /* Центрирование по горизонтали */
+  align-items: center; /* Центрирование по вертикали */
   font-size: var(--font-size-base-8);
   color: var(--gray-default);
   font-family: var(--font-nunito-sans);
@@ -1178,9 +1183,7 @@
   height: 123px;
   z-index: 5;
 }
-.rectangle-parent13 {
 
-}
 
 .rectangle-parent12 {
   position: absolute;
@@ -1248,6 +1251,25 @@
   line-height: normal;
   letter-spacing: normal;
 }
+.group-inner {
+  position: absolute;
+  top: 0;
+  left: 119px;
+  border-radius: 50%;
+  background-color: var(--color-darkslateblue);
+  width: 30px;
+  height: 30px;
+}
+
+.div3 a {}
+.vector-group {
+  position: absolute;
+  top: 130px;
+  left: 244px;
+  width: 80%;
+  height: 125px;
+  font-family: var(--font-nunito-sans);
+}
 .group-child1 {
   position: absolute;
   top: 0;
@@ -1260,6 +1282,12 @@
 }
   .frame-group {
     gap: 32px;
+  }
+  .group a{
+  text-decoration: none;
+font-family: var(--font-nunito-sans);
+color: var(--color-darkslateblue);
+
   }
   .frame-container {
     padding-bottom: 30px;

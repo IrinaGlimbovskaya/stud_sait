@@ -1,10 +1,22 @@
 .frame-inner {
+  height: 56.7px;
+  width: 52.7px;
   position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--color-gray-100);
-  width: 1440px;
-  height: 2304px;
+  margin: 0 !important;
+  top: -10.1px;
+  left: -18.1px;
+  border-radius: 50%;
+  background-color: var(--color-sandybrown-100);
+  z-index: 1;
+}
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 270px;
+    margin-left: 244px;
+
 }
 .about1,
 .b3 {
@@ -211,7 +223,7 @@
   position: absolute;
   top: 130px;
   left: 244px;
-  width: 1288px;
+  width: 50%;
   height: 125px;
   font-family: var(--font-nunito-sans);
 }
@@ -223,7 +235,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 1440px;
+  width: 100%;
   height: 221px;
 }
 .div8 {
@@ -231,7 +243,7 @@
   top: 49px;
   left: 142px;
   display: inline-block;
-  width: 182px;
+  width: 100%;
 }
 .b5,
 .div10,
@@ -249,7 +261,7 @@
 .div11,
 .strada-iuri-gagarin1 {
   top: 49px;
-  width: 226px;
+  width: 100%;
 }
 .b5,
 .div11,
